@@ -1,6 +1,7 @@
 const UserModel = require('../model/user-model');
 
 exports.getUsers = async (req, res) => {
+    
 }
 
 exports.createUser = async (req, res) => {
