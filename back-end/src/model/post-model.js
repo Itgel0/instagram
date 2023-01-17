@@ -3,9 +3,15 @@ const { model, Schema } = require('mongoose');
 const PostSchema = new Schema({
     description: String,
     userId: String,
-    userName: String,
+    userName: {
+        type: String,
+        required: [true, 'Username is required']
+    },
     userProfile: String,
-    like: Number,
+    like: {
+        type: Number,
+        default: 0
+    },
     images: [String]
 })
 

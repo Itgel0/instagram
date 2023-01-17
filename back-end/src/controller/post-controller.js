@@ -10,11 +10,11 @@ exports.createPost = async (req, res) => {
     try {
         await PostModel.create(req.body)
 
-        posts.push({
-            id: posts.length + 1 + '',
-            title: title,
-            message: message
-        })
+        // posts.push({
+        //     id: posts.length + 1 + '',
+        //     title: title,
+        //     message: message
+        // })
 
         res.status('200').json({ message: 'success' })
     } catch (err) {

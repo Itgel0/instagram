@@ -1,16 +1,19 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-const uri = "mongodb+srv://Itgel0:itgel0116@cluster0.hbwnvmh.mongodb.net/?retryWrites=true&w=majority"
+dotenv.config();
+
+const uri = process.env.MONGODB_ATLAS_URI;
 //          End mongodb Atlas iin userName password baina
 
 const connect = async () => {
-    try {
-        await mongoose.connect(uri);
+  try {
+    await mongoose.connect(uri);
 
-        console.log('Database connected');
-    } catch (err) {
-        console.log(err);
-    }
-}
+    console.log("Database connected");
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 module.exports = connect;
